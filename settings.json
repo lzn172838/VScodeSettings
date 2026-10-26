@@ -1,17 +1,154 @@
 {
-  "claudeCode.preferredLocation": "panel",
-  "claudeCode.hideOnboarding": true,
+  // ============================================================
+  // APARÊNCIA: tema, ícones, fontes e layout da janela
+  // ============================================================
+
+  // Tema e ícones
   "workbench.colorTheme": "Min Dark",
-  "workbench.startupEditor": "newUntitledFile",
+  "workbench.preferredDarkColorTheme": "Min Dark",
+  "window.autoDetectColorScheme": true,
+  "workbench.iconTheme": "symbols",
+  "workbench.productIconTheme": "fluent-icons",
+
+  // Fontes (editor, interface e terminal usam a mesma)
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontSize": 16,
   "editor.lineHeight": 1.8,
-  "js/ts.suggest.autoImports": true,
-  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.fontSize": 14,
+
+  // Janela e barras
+  "window.titleBarStyle": "native",
+  "window.customTitleBarVisibility": "never",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.activityBar.location": "top",
+  "workbench.statusBar.visible": false,
+  "workbench.browser.showInTitleBar": false,
+  "chat.titleBar.openInAgentsWindow.enabled": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.editor.labelFormat": "short",
+
+  // Breadcrumbs (barra de caminho acima do editor, tudo desligado)
+  "breadcrumbs.icons": false,
+  "breadcrumbs.showKeys": false,
+  "breadcrumbs.showFiles": false,
+  "breadcrumbs.symbolPath": "off",
+  "breadcrumbs.showArrays": false,
+  "breadcrumbs.showEvents": false,
+  "breadcrumbs.showFields": false,
+  "breadcrumbs.showClasses": false,
+  "breadcrumbs.showMethods": false,
+  "breadcrumbs.showBooleans": false,
+  "breadcrumbs.showFunctions": false,
+  "breadcrumbs.showConstants": false,
+  "breadcrumbs.showEnumMembers": false,
+  "breadcrumbs.showConstructors": false,
+
+  // Custom UI Style (extensão que altera o CSS da interface)
+  "custom-ui-style.font.sansSerif": "JetBrainsMono Nerd Font",
+  "custom-ui-style.font.monospace": "JetBrainsMono Nerd Font",
+  "custom-ui-style.stylesheet": {
+    ".title-label > h2": "display: none",
+    ".editor-actions": "display: none",
+    ".pane-header": "padding: 0 8px",
+    ".pane-body": "padding: 8px",
+    ".split-view-view:first-child .pane-header": "display: none !important;",
+    ".monaco-list-row": "border-radius: 4px;",
+    ".monaco-workbench .monaco-list:not(.element-focused):focus:before": "display: none;",
+    ".part.sidebar > .title > .title-actions": "display: none !important"
+  },
+
+  // ============================================================
+  // EDITOR: comportamento da escrita de código
+  // ============================================================
+
+  // Indentação e régua
+  "editor.tabSize": 2,
   "editor.rulers": [],
-  "extensions.ignoreRecommendations": true,
-  "js/ts.tsserver.log": "off",
+
+  // Sugestões e autocompletar
+  "editor.suggestSelection": "first",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.parameterHints.enabled": false,
+
+  // Visual do editor
+  "editor.minimap.enabled": false,
   "editor.stickyScroll.enabled": false,
+  "editor.renderLineHighlight": "gutter",
+  "editor.semanticHighlighting.enabled": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "editor.scrollbar.horizontalScrollbarSize": 0,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": []
+  },
+
+  // Animações e rolagem suave
+  "editor.smoothScrolling": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "workbench.list.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "terminal.integrated.cursorBlinking": true,
+
+  // Outros
+  "editor.multiCursorLimit": 50000,
+  "editor.accessibilitySupport": "off",
+
+  // Ações ao salvar
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // Formatadores padrão por linguagem
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[prisma]": {
+    "editor.formatOnSave": true
+  },
+
+  // ============================================================
+  // EXPLORER: painel de arquivos
+  // ============================================================
+
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.compactFolders": false,
+  "explorer.sortOrder": "foldersNestsFiles",
   "workbench.tree.enableStickyScroll": false,
+
+  // Agrupamento de arquivos relacionados (ex.: package.json esconde o tsconfig)
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "package.json": ".eslint*, eslint.config.*, prettier*, tsconfig*, vite*, pnpm-*, bun.lockb, nest*, package-lock*",
+    "tailwind.config.*": "tailwind.config*, postcss.config*",
+    ".env.local": ".env*",
+    ".env": ".env*"
+  },
+
+  // Arquivos escondidos do explorer
+  "files.exclude": {
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/.git": true,
+    ".vscode": true
+    // "node_modules": true
+  },
+
+  // Associação de arquivos a linguagens
   "files.associations": {
     ".env.*": "dotenv",
     ".prettierrc": "json",
@@ -19,6 +156,9 @@
     ".dev.vars": "dotenv",
     "*.ndjson": "jsonl"
   },
+
+  // Ícones por nome de arquivo (extensão Symbols)
+  "symbols.hidesExplorerArrows": false,
   "symbols.files.associations": {
     "*.module.ts": "nest",
     "*.guard.ts": "typescript",
@@ -33,6 +173,35 @@
     ".env.example": "gear",
     "*.ndjson": "brackets-orange"
   },
+
+  // ============================================================
+  // LINGUAGENS E FERRAMENTAS DE CÓDIGO
+  // ============================================================
+
+  // JavaScript / TypeScript
+  "js/ts.suggest.autoImports": true,
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "js/ts.preferences.preferTypeOnlyAutoImports": true,
+  "js/ts.tsserver.log": "off",
+
+  // ESLint
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "graphql"
+  ],
+
+  // Emmet (atalhos de HTML/JSX)
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "mdx": "javascriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+    "mdx": "jsx"
+  },
+
+  // Tailwind CSS (detecta classes dentro de tv(), cva() e tw())
   "tailwindCSS.experimental.classRegex": [
     [
       "tv\\(([^)]*)\\)",
@@ -42,27 +211,37 @@
     "class:\\s*?[\"'`]([^\"'`]*).*?,",
     "tw\\('([^']*)'\\)"
   ],
-  "editor.parameterHints.enabled": false,
-  "editor.renderLineHighlight": "gutter",
-  "cSpell.language": "en,pt",
-  "editor.suggestSelection": "first",
-  "explorer.confirmDelete": false,
-  "gitlens.codeLens.recentChange.enabled": false,
+
+  // ============================================================
+  // GIT E TERMINAL
+  // ============================================================
+
+  "git.enableSmartCommit": true,
+  "git.openRepositoryInParentFolders": "always",
   "terminal.integrated.showExitAlert": false,
-  "[prisma]": {
-    "editor.formatOnSave": true
+  "terminal.integrated.gpuAcceleration": "on",
+
+  // GitLens
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.advanced.messages": {
+    "suppressIntegrationDisconnectedTooManyFailedRequestsWarning": true,
+    "suppressIntegrationRequestTimedOutWarning": true
   },
-  "js/ts.preferences.preferTypeOnlyAutoImports": true,
-  "workbench.editor.labelFormat": "short",
-  "editor.fontLigatures": true,
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "mdx": "javascriptreact"
-  },
-  "emmet.syntaxProfiles": {
-    "javascript": "jsx",
-    "mdx": "jsx"
-  },
+
+  // ============================================================
+  // EXTENSÕES
+  // ============================================================
+
+  // Claude Code
+  "claudeCode.preferredLocation": "panel",
+  "claudeCode.hideOnboarding": true,
+
+  // Live Server
+  "liveServer.settings.donotShowInfoMsg": true,
+
+  // Code Spell Checker
+  "cSpell.language": "en,pt",
   "cSpell.enabledFileTypes": {
     "asciidoc": false,
     "c": false,
@@ -82,66 +261,6 @@
     "scala": false,
     "scss": false
   },
-  "editor.acceptSuggestionOnCommitCharacter": false,
-  "explorer.compactFolders": false,
-  "git.enableSmartCommit": true,
-  "editor.accessibilitySupport": "off",
-  "explorer.confirmDragAndDrop": false,
-  "terminal.integrated.fontSize": 14,
-  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "graphql"
-  ],
-  "editor.semanticHighlighting.enabled": false,
-  "workbench.productIconTheme": "fluent-icons",
-  "editor.fontFamily": "JetBrainsMono Nerd Font",
-  "gitlens.codeLens.authors.enabled": false,
-  "editor.tabSize": 2,
-  "security.workspace.trust.untrustedFiles": "newWindow",
-  "files.exclude": {
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/.hg": true,
-    "**/.svn": true,
-    "**/.git": true,
-    ".vscode": true
-    // "node_modules": true
-  },
-  "workbench.iconTheme": "symbols",
-  "update.mode": "start",
-  "terminal.integrated.gpuAcceleration": "on",
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "window.commandCenter": false,
-  "git.openRepositoryInParentFolders": "always",
-  "symbols.hidesExplorerArrows": false,
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "workbench.editor.empty.hint": "hidden",
-  "update.showReleaseNotes": false,
-  "security.promptForLocalFileProtocolHandling": false,
-  "editor.hideCursorInOverviewRuler": true,
-  "editor.minimap.enabled": false,
-  "window.titleBarStyle": "native",
-  "editor.scrollbar.vertical": "hidden",
-  "explorer.sortOrder": "foldersNestsFiles",
-  "explorer.fileNesting.patterns": {
-    "package.json": ".eslint*, eslint.config.*, prettier*, tsconfig*, vite*, pnpm-*, bun.lockb, nest*, package-lock*",
-    "tailwind.config.*": "tailwind.config*, postcss.config*",
-    ".env.local": ".env*",
-    ".env": ".env*"
-  },
-  "explorer.fileNesting.enabled": true,
   "cSpell.userWords": [
     "automations",
     "bootcamp",
@@ -216,55 +335,14 @@
     "zrevrank",
     "zscore"
   ],
-  "workbench.statusBar.visible": false,
-  "editor.tokenColorCustomizations": {
-    "textMateRules": []
-  },
-  "workbench.layoutControl.enabled": false,
-  "window.autoDetectColorScheme": true,
-  "gitlens.advanced.messages": {
-    "suppressIntegrationDisconnectedTooManyFailedRequestsWarning": true,
-    "suppressIntegrationRequestTimedOutWarning": true
-  },
-  "liveServer.settings.donotShowInfoMsg": true,
-  "editor.multiCursorLimit": 50000,
-  "custom-ui-style.stylesheet": {
-    ".title-label > h2": "display: none",
-    ".editor-actions": "display: none",
-    ".pane-header": "padding: 0 8px",
-    ".pane-body": "padding: 8px",
-    ".split-view-view:first-child .pane-header": "display: none !important;",
-    ".monaco-list-row": "border-radius: 4px;",
-    ".monaco-workbench .monaco-list:not(.element-focused):focus:before": "display: none;",
-    ".part.sidebar > .title > .title-actions": "display: none !important"
-  },
-  "custom-ui-style.font.sansSerif": "JetBrainsMono Nerd Font",
-  "custom-ui-style.font.monospace": "JetBrainsMono Nerd Font",
-  "editor.scrollbar.verticalScrollbarSize": 0,
-  "editor.scrollbar.horizontalScrollbarSize": 0,
-  "breadcrumbs.icons": false,
-  "breadcrumbs.showKeys": false,
-  "breadcrumbs.showFiles": false,
-  "breadcrumbs.symbolPath": "off",
-  "breadcrumbs.showArrays": false,
-  "breadcrumbs.showEvents": false,
-  "breadcrumbs.showFields": false,
-  "breadcrumbs.showClasses": false,
-  "breadcrumbs.showMethods": false,
-  "breadcrumbs.showBooleans": false,
-  "breadcrumbs.showFunctions": false,
-  "breadcrumbs.showConstants": false,
-  "breadcrumbs.showEnumMembers": false,
-  "breadcrumbs.showConstructors": false,
-  "editor.smoothScrolling": true,
-  "workbench.list.smoothScrolling": true,
-  "editor.cursorBlinking": "smooth",
-  "editor.cursorSmoothCaretAnimation": "on",
-  "terminal.integrated.smoothScrolling": true,
-  "terminal.integrated.cursorBlinking": true,
-  "workbench.preferredDarkColorTheme": "Min Dark",
-  "workbench.activityBar.location": "top",
-  "chat.titleBar.openInAgentsWindow.enabled": false,
-  "workbench.browser.showInTitleBar": false,
-  "window.customTitleBarVisibility": "never"
+
+  // ============================================================
+  // SISTEMA: atualizações e segurança
+  // ============================================================
+
+  "update.mode": "start",
+  "update.showReleaseNotes": false,
+  "extensions.ignoreRecommendations": true,
+  "security.workspace.trust.untrustedFiles": "newWindow",
+  "security.promptForLocalFileProtocolHandling": false
 }
