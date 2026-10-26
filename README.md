@@ -64,7 +64,29 @@ Minhas configurações e extensões do VS Code.
 | ChatGPT (OpenAI) | `openai.chatgpt` |
 | Codex Audio (OpenAI) | `openai.codex-audio` |
 
-## Como usar
+## Instalação rápida
+
+Os scripts instalam a fonte `JetBrainsMono Nerd Font`, todas as extensões e as settings. Antes de substituir, eles salvam um backup das suas settings atuais em `settings.json.bak`.
+
+Pré-requisito: VS Code instalado e o comando `code` disponível no PATH.
+
+Windows (PowerShell):
+
+```powershell
+git clone https://github.com/lzn172838/VScodeSettings.git
+cd VScodeSettings
+powershell -ExecutionPolicy Bypass -File .\install.ps1
+```
+
+macOS e Linux:
+
+```bash
+git clone https://github.com/lzn172838/VScodeSettings.git
+cd VScodeSettings
+bash install.sh
+```
+
+## Instalação manual
 
 Instalar todas as extensões:
 
